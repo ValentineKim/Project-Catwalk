@@ -87,16 +87,16 @@ function App() {
         {/* <Overview
           product={selectedProduct}
           avgRating={avgRatings} /> */}
-        <RelatedItemsList
+        {/* <RelatedItemsList
           selectProduct={selectProduct}
           avgRating={avgRatings}
           currentProduct={selectedProduct} />
         <YourOutfitList
           avgRating={avgRatings}
+          currentProduct={selectedProduct} /> */}
+        <QA
           currentProduct={selectedProduct} />
-        {/* <QA
-          currentProduct={selectedProduct} />
-        <Reviews
+        {/* <Reviews
           avgRating={avgRatings}
           metadata={metadata}
           getRatings={getRatings}
