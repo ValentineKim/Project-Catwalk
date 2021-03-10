@@ -14,29 +14,28 @@ const AnswerPicture = (props) => {
 
   return (
     <div style={{ paddingLeft: '30px' }}>
-      {props.answer.photos.length > 0 ? <div className="answerImages">
-    {props.answer.photos.map( (image,index)=>  {
-      return (
-        <div key ={index}>
-      <Modal
-      ariaHideApp={false}
-      isOpen={photoClicked}
-      className ="ModalStyle"
-      overlayClassName = "ModalOverlay"
-      onRequestClose={() => setClicked(!photoClicked)}
-      contentLabel="Example Modal">
-        <button className="buttonModal" onClick={()=>{setClicked(!photoClicked)}}>X</button>
-         <img className='imgModal' src={correct(image)} alt="" key={index}/>
+      {props.answer.photos.length > 0 ? (
+        <div className="answerImages">
+          {props.answer.photos.map((image, index) => (
+            <div key={index}>
+              <Modal
+                ariaHideApp={false}
+                isOpen={photoClicked}
+                className="ModalStyle"
+                overlayClassName="ModalOverlay"
+                onRequestClose={() => setClicked(!photoClicked)}
+                contentLabel="Example Modal"
+              >
+                <button className="buttonModal" onClick={() => { setClicked(!photoClicked); }}>X</button>
+                <img className="imgModal" src={correct(image)} alt="" key={index} />
 
-
-      </Modal>
-      <img onClick={()=>{selectedPhoto(image)}} className='img' src={image.url} alt="" key={index}/>
-      </div>
+              </Modal>
+              <img onClick={() => { selectedPhoto(image); }} className="img" src={image.url} alt="" key={index} />
+            </div>
+          ))}
+        </div>
       )
-
-    })}
-  </div>
-    :null}
+        : null}
     </div>
 
   );
